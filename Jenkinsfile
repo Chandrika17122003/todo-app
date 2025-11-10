@@ -24,12 +24,16 @@ pipeline {
 
         // 🔹 Stage 3: "Build" step (for static sites, no actual build is required)
         // Here we can just simulate a build or copy files to a build folder.
-        stage('Build') {
-            steps {
-                echo '⚙️ Simulating build process (copying files to build directory)...'
-                sh 'mkdir -p build && cp -r * build/'
-            }
-        }
+      stage('Build') {
+    steps {
+        echo '⚙️ Simulating build process (copying files to build directory)...'
+        sh '''
+        rm -rf build
+        mkdir build
+        cp -r index.html page.css page.js build/
+        '''
+    }
+}
 
         // 🔹 Stage 4: (Optional) Deploy step
         // For example, if you want to serve it with a simple Python or Nginx server
