@@ -1,5 +1,5 @@
 let tasks = [];
-
+let name="chandrika"
 function addTask() {
     const taskInput = document.getElementById("task");
     const taskText = taskInput.value.trim();
@@ -62,3 +62,4 @@ function loadTasks() {
 }
 
 window.onload = loadTasks;
+
