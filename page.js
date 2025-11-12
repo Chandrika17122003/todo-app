@@ -62,6 +62,6 @@ function loadTasks() {
 }
 
 window.onload = loadTasks;
-console.log("updated text")
+
 
 
